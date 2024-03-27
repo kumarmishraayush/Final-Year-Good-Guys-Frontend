@@ -123,11 +123,11 @@ const Navbar = () => {
               <ul>
                 <li onClick={hi}>View Profile Pic</li>
                 <li onClick={hi}>Logout</li>
-                <button className="darkMode-btn">
+                 
                 <li onClick={darkMode}>
                   {!isDark ? <MdDarkMode size={25} /> : <CiLight size={25} />}
                 </li>
-                </button>
+                 
                 <li onClick={hi}>Setting</li>
               </ul>
             </div>
