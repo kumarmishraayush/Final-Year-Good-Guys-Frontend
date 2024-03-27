@@ -111,14 +111,16 @@
   justify-content: space-around;
   text-align: center;
   margin-top: 30px;
+   
   padding-top: 20px;
 }
 
-.left-point-analysis ul li {
+.left-point-analysis  {
   font-size: x-large;
   text-align: center;
-  list-style: circle;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 18px;
+  font-family: sans-serif;
+  color: var(--color-text-secondary);
 }
 
 .good-points img {

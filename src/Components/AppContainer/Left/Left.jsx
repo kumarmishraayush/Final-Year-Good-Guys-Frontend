@@ -36,9 +36,8 @@ const Left = () => {
         <div className="left-PointContainer">
           <div className="left-heading-points">
             <div className="left-point-analysis">
-              <ul>
-                <li>Let's Analyse the Person</li>
-              </ul>
+              Let's Analyse the Person
+              
             </div>
           </div>
           <div className="person-points">
