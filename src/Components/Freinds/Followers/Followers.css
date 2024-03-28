@@ -1,0 +1,87 @@
+.light-theme {
+  --color-primary: #f0f0f0;
+  --color-secondary: white;
+  --color-button-primary: black;
+  --color-button-seconday: #d2d3db;
+  --color-text-primary: black;
+  --color-text-secondary: #a9a9a9;
+  --color-button-text: black;
+  --border-color: none;
+}
+
+.dark-theme {
+  --color-primary: #1e1e1e;
+  --color-secondary: #2c2c2c;
+  --color-tertiary: #2e2d2d;
+  --color-button-primary: #fffb73;
+  --color-button-seconday: gray;
+  --color-text-primary: #eeeded;
+  --color-text-secondary: rgb(172, 170, 170);
+  --color-button-text: white;
+  --color-border: rgba(252, 250, 250, 0.1);
+}
+.followers-main {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 98%;
+  margin: auto;
+  background-color: var(--color-primary);
+  border-radius: 10px;
+}
+
+.followers-search input {
+  width: 90%;
+  border: none;
+  height: 30px;
+  margin-top: 20px;
+  background-color: var(--color-secondary);
+  border-radius: 8px;
+  color: var(--color-button-primary);
+  padding-left: 10px;
+}
+
+input:focus{
+  outline: none;  
+  border: none;
+}
+.followers-search {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.follower-search-icon {
+  position: absolute;
+  top: 25px;
+  right: 9%;
+}
+
+
+.follower-list
+{
+  height: 300px;
+  overflow-y: scroll;
+}
+
+ 
+.follower-detail
+{
+  display: flex;
+  align-items: center;
+
+}
+ 
+
+
+.follower-detail img{
+  height: 30px;
+  border-radius: 30px;
+  margin-left: 5%;
+}
+
+.follower-detail h5 
+{
+  margin-left: 5%;
+  color: var(--color-text-primary);
+  
+}

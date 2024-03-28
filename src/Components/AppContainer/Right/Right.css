@@ -1,13 +1,4 @@
-.right-main
-{
-    text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    
-}
-
-@media only screen and (max-width: 768px) {
-     .right-main{
-        display: none;
-        position: absolute;
-     }
-}
+ .right-followings
+ {
+    margin-top:50px ;
+ }
