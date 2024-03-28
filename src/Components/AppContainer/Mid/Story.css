@@ -1,24 +1,72 @@
 .light-theme {
-    --color-primary: #f0f0f0;
-    --color-secondary: white;
-    --color-button-primary: black;
-    --color-button-seconday: #d2d3db;
-    --color-text-primary: black;
-    --color-text-secondary: #a9a9a9;
-    --color-button-text: black;
-    --border-color: none;
-  }
-  
-  .dark-theme {
-    --color-primary: #1e1e1e;
-    --color-secondary: #2c2c2c;
-    --color-tertiary: #2e2d2d;
-    --color-button-primary: #fffb73;
-    --color-button-seconday: #2f58cd;
-    --color-text-primary: #eeeded;
-    --color-text-secondary: rgb(172, 170, 170);
-    --color-button-text: white;
-    --color-border: rgba(252, 250, 250, 0.1);
-  }
+  --color-primary: #f0f0f0;
+  --color-secondary: white;
+  --color-button-primary: black;
+  --color-button-seconday: #d2d3db;
+  --color-text-primary: black;
+  --color-text-secondary: #a9a9a9;
+  --color-button-text: black;
+  --border-color: none;
+}
 
- 
+.dark-theme {
+  --color-primary: #1e1e1e;
+  --color-secondary: #2c2c2c;
+  --color-tertiary: #2e2d2d;
+  --color-button-primary: #fffb73;
+  --color-button-seconday: gray;
+  --color-text-primary: #eeeded;
+  --color-text-secondary: rgb(172, 170, 170);
+  --color-button-text: white;
+  --color-border: rgba(252, 250, 250, 0.1);
+}
+
+.story-ownerIMG {
+  height: 30px;
+  position: absolute;
+  z-index: 1;
+  bottom: 8px;
+  left: 10px;
+  border-radius: 50%;
+}
+
+.story-postIMG {
+  height: 90px;
+  border-radius: 15px;
+  opacity: .8;
+  margin-left: 6px;
+  padding-top: 3px;
+}
+
+.story-card {
+  position: relative;
+  margin-left: 15px; 
+  border-width: 5px;
+  background-color:var(--color-button-seconday);
+  border-width: 5px;
+  width: 91%;
+  border-radius: 15px;
+   
+  
+}
+
+.story-main {
+  display: flex;
+  overflow-x: scroll;
+  width: 92%;
+  margin: auto;
+  height: 120px;
+  background-color: var(--color-secondary);
+  align-items: center;
+  border-radius: 10px;
+}
+
+.story-main::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.story-main {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
