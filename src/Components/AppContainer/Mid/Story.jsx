@@ -46,7 +46,7 @@ const Story = () => {
 
   return (
     <div className="story-main">
-       <div className="story-own" >
+       <div className="story-own" style={{boxShadow:"0 0 10px rgba(0, 0, 0, 0.3)", borderRadius:"50%",paddingRight:"5px"}} >
             <img
               id="add-story"
               className="story-ownerIMG"

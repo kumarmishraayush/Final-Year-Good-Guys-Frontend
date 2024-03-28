@@ -52,10 +52,12 @@
 
 #add-story
 {
-  top: 17%;
+  top: 19%;
   left: 23%;
   height: 60%;
   z-index: 1;
+  
+  
 }
 
 .story-own
