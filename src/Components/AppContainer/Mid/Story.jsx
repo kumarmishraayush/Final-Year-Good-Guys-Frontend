@@ -46,6 +46,22 @@ const Story = () => {
 
   return (
     <div className="story-main">
+       <div className="story-own" >
+            <img
+              id="add-story"
+              className="story-ownerIMG"
+              src={data[0].storyOwner}
+              alt="story owner"
+            />
+            <img
+               
+              className="story-postIMG"
+              src="plus.png"
+              alt="story-post"
+            />
+           
+            
+      </div>
         {data.map((item, index) => (
           <div key={index}>
             {" "}

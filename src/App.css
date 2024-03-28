@@ -70,4 +70,8 @@
     {
       width: 100%;
     }
+    .app-mid
+    {
+      margin-top: -35px;
+    }
   }

@@ -50,6 +50,24 @@
   
 }
 
+#add-story
+{
+  top: 30%;
+  left: 33%;
+  height: 40%;
+  z-index: 1;
+}
+
+.story-own
+{
+  position: relative;
+  margin-left: 15px; 
+  border-width: 5px;
+  background-color: var(--color-secondary);
+  border-width: 5px;
+  width: 91%;
+  border-radius: 15px;
+}
 .story-main {
   display: flex;
   overflow-x: scroll;
@@ -65,6 +83,8 @@
   display: none;
 }
 
+
+ 
 /* Hide scrollbar for IE, Edge and Firefox */
 .story-main {
   -ms-overflow-style: none; /* IE and Edge */
