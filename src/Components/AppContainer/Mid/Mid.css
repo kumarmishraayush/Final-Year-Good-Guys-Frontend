@@ -47,7 +47,19 @@
     width: 80%;
      
   }
-  
+  .upper-right
+  {
+    display: flex;
+    position: relative;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  .check
+  {
+    position: absolute;
+    right: 2%;
+    top: 32%;
+  }
   .upper-right input
   {
     height: 40px;
@@ -94,6 +106,9 @@
 
   @media screen and (max-width: 768px) {
      
+    .addPost-right{
+      width: 98%;
+    }
     .camera, .add-image, .add-video
     {
       width: 150px;

@@ -4,7 +4,8 @@ import Story from "./Story";
 import { FcCompactCamera } from "react-icons/fc";
 import { FcAddImage } from "react-icons/fc";
 import { FcVideoCall } from "react-icons/fc";
-
+import { FcOk } from "react-icons/fc";
+ 
 const Mid = () => {
   return (
     <>
@@ -19,6 +20,7 @@ const Mid = () => {
         <div className="addPost-right">
           <div className="upper-right">
             <input type="text" placeholder="What's on your mind, hakim ?" />
+            <FcOk size={25} className="check" />
           </div>
           <div className="lower-right">
             <div className="camera">
