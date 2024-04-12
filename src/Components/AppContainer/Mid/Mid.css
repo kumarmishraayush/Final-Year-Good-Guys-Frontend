@@ -24,7 +24,7 @@
 
   .mid-addPost
   {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
     width: 80%;
     margin: auto;
     display: flex;
@@ -35,7 +35,7 @@
 
   .addPost-left img{
      height: 38px;
-     border-radius: 100%;
+     border-radius: 98%;
   }
   .addPost-left
   {
@@ -60,11 +60,15 @@
     cursor: pointer;
     background-color: gray;
     width: 15%;
-    text-align: center;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     color: white;
     margin-right: 7px;
-    top: 33%;
+    top: 35.5%;
+    padding-bottom: 2.5px;
   }
   
   .upper-right input
@@ -116,6 +120,10 @@
     .addPost-right{
       width: 98%;
     }
+    .mid-addPost
+    {
+      width: 98%;
+    }
     .camera, .add-image, .add-video
     {
       width: 150px;
@@ -123,7 +131,7 @@
       padding-right: 5px;
     }
     .lower-right h5{
-      margin-left: -10px;
+      margin-left: 1px;
     }
     .upper-right input
     {
@@ -140,12 +148,9 @@
     
   }
 
-
-
-  
-  @media screen and (max-width: 322px) {
+  @media screen and (max-width: 321px)
+  {
     .lower-right h5{
-      display: none;
+      margin-left: -10px;
     }
-
   }

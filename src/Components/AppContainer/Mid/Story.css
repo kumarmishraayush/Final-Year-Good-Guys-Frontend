@@ -67,7 +67,7 @@
   border-width: 5px;
   background-color: var(--color-secondary);
   border-width: 5px;
-  width: 91%;
+  width: 100%;
   border-radius: 15px;
 }
 .story-main {
@@ -81,6 +81,13 @@
   border-radius: 10px;
 }
 
+@media screen and (max-width: 768px)
+{
+  .story-main
+  {
+    width: 98%;
+  }
+}
 .story-main::-webkit-scrollbar {
   display: none;
 }
