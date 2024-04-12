@@ -76,7 +76,7 @@
   width: 92%;
   margin: auto;
   height: 120px;
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   align-items: center;
   border-radius: 10px;
 }
