@@ -5,6 +5,7 @@ import Mid from "./Components/AppContainer/Mid/Mid.jsx"
 import Right from "./Components/AppContainer/Right/Right.jsx"
 
 import Navbar from "./Components/Navbar/Navbar";
+import Login from "./Components/Pages/LoginPage/Login.jsx";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <div className="app-mid"><Mid/></div>
         <div className="app-right"><Right/></div>
       </div>
+      {/* <Login/> */}
     </>
   );
 };

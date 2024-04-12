@@ -21,3 +21,109 @@
     --color-border: rgba(252, 250, 250, 0.1);
   }
  
+
+  .mid-addPost
+  {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    margin: auto;
+    display: flex;
+    background-color: var(--color-secondary);
+    margin-top: 30px;
+    border-radius: 10px;
+  }
+
+  .addPost-left img{
+     height: 38px;
+     border-radius: 100%;
+  }
+  .addPost-left
+  {
+    margin-left: 20px;
+    padding-top: 10px;
+  }
+  .addPost-right
+  {
+    width: 80%;
+     
+  }
+  
+  .upper-right input
+  {
+    height: 40px;
+    width: 90%;
+    background-color: var(--color-primary);
+    border: none;
+    margin-top: 8px;
+    padding-left: 5%;
+    margin-left: 5%;
+    border-radius: 10px;
+    color: var(--color-text-secondary);
+  }
+  .lower-right
+  {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    height: 40px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+  }
+  .lower-right h5{
+    font-weight: 200;
+  }
+  .camera, .add-image, .add-video
+  {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-text-primary);
+    background-color: var(--color-primary);
+    width: 25%;
+    padding-left: 7px;
+    
+    border-radius: 10px;
+  }
+   .camera :hover, .add-image :hover,.add-video :hover
+  {
+    cursor: pointer;
+    transform: scale(1.1)
+  }
+  
+
+  @media screen and (max-width: 768px) {
+     
+    .camera, .add-image, .add-video
+    {
+      width: 150px;
+      transform: scale(0.8);
+      padding-right: 5px;
+    }
+    .lower-right h5{
+      margin-left: -10px;
+    }
+    .upper-right input
+    {
+      width: 110%;
+    }
+    .addPost-left
+    {
+      display: none;
+    }
+    .upper-right
+    {
+      width: 100%;
+    }
+    
+  }
+
+
+
+  
+  @media screen and (max-width: 322px) {
+    .lower-right h5{
+      display: none;
+    }
+
+  }
