@@ -20,11 +20,11 @@ const Story = () => {
       <div className="story-main">
         <div className="story-owner">
           <img src="ProfilePic.jpg" alt="Add story" />
-          <IoIosAddCircle color="#fffb73" size={25} className="add-story-logo" />
+          <IoIosAddCircle color="gray" size={25} className="add-story-logo" />
         </div>
         {data.map((item, index) => (
           <div key={index} className="story-image">
-            <img src={item.storyOwner} alt="stories" />
+            <img src={item.storyPost} alt="stories" />
           </div>
         ))}
       </div>
