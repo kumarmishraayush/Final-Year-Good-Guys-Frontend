@@ -29,7 +29,7 @@
     margin: auto;
     display: flex;
     background-color: var(--color-secondary);
-    margin-top: 30px;
+     
     border-radius: 10px;
   }
 
@@ -105,13 +105,15 @@
     background-color: var(--color-primary);
     width: 25%;
     padding-left: 7px;
-    
+    transition: .2s;
     border-radius: 10px;
   }
    .camera :hover, .add-image :hover,.add-video :hover
   {
     cursor: pointer;
-    transform: scale(1.1)
+    transform: scale(1.1);
+    transition: .2s;
+    
   }
   
 

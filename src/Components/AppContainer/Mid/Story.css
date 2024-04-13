@@ -21,81 +21,55 @@
   --color-border: rgba(252, 250, 250, 0.1);
 }
 
-.story-ownerIMG {
-  height: 30px;
-  position: absolute;
-  z-index: 1;
-  bottom: 8px;
-  left: 10px;
-  border-radius: 50%;
-}
-
-.story-postIMG {
-  height: 90px;
-  border-radius: 15px;
-  opacity: .8;
-  margin-left: 6px;
-  padding-top: 3px;
-}
-
-.story-card {
-  position: relative;
-  margin-left: 15px; 
-  border-width: 5px;
-  background-color:var(--color-button-seconday);
-  border-width: 5px;
-  width: 91%;
-  border-radius: 15px;
-   
-  
-}
-
-#add-story
-{
-  top: 19%;
-  left: 23%;
-  height: 60%;
-  z-index: 1;
-  
-  
-}
-
-.story-own
-{
-  position: relative;
-  margin-left: 15px; 
-  border-width: 5px;
-  background-color: var(--color-secondary);
-  border-width: 5px;
-  width: 100%;
-  border-radius: 15px;
-}
 .story-main {
   display: flex;
-  overflow-x: scroll;
-  width: 92%;
+  width: 95%;
   margin: auto;
-  height: 120px;
-  background-color: var(--color-primary);
-  align-items: center;
-  border-radius: 10px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
 }
 
-@media screen and (max-width: 768px)
-{
-  .story-main
-  {
-    width: 98%;
-  }
-}
 .story-main::-webkit-scrollbar {
-  display: none;
+  display: none; /* Hide scrollbar in WebKit browsers */
 }
 
+.story-owner {
+  flex-shrink: 0; /* Prevent shrinking */
+  margin-right: 10px; /* Add space between items */
+}
 
- 
-/* Hide scrollbar for IE, Edge and Firefox */
-.story-main {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+.story-owner
+{
+  border-color: #fffb73;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 2px;
+  position: relative;
+}
+.story-owner img {
+  border-radius: 50%;
+  height: 70px; /* Set image size */
+}
+.add-story-logo{
+  position: absolute;
+  top: 70%;
+  left: 65%;
+}
+.story-image {
+  margin-right: 10px; /* Add space between items */
+}
+
+.story-image img {
+   /* Set image size */
+  height: 70px; /* Set image size */
+  border-radius: 50px;
+}
+
+.story-image 
+{
+  border-color: gray;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 2px;
 }
