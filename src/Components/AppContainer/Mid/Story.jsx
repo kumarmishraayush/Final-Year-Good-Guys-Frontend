@@ -20,8 +20,9 @@ const Story = () => {
       <div className="story-main">
         <div className="story-owner">
           <img src="ProfilePic.jpg" alt="Add story" />
-          <IoIosAddCircle color="gray" size={25} className="add-story-logo" />
+          <IoIosAddCircle color="GRAY" size={25} className="add-story-logo" />
         </div>
+
         {data.map((item, index) => (
           <div key={index} className="story-image">
             <img src={item.storyPost} alt="stories" />
