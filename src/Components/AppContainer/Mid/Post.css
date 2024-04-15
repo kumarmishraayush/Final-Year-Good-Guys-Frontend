@@ -110,6 +110,7 @@
     margin-left: 5%;
     color: var(--color-text-primary);
     font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
     text-wrap: stable;
     margin-right: 5%;
     
@@ -143,7 +144,7 @@
   }
   .post-addComment input
   {
-    height: 50px;
+    height: 36px;
     padding-left: 5%;
     background-color: var(--color-primary);
     border-radius: 15px;

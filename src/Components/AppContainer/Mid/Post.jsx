@@ -83,13 +83,13 @@ const Post = () => {
 
       <div className="post-mid">
         <img src="Mera.jpg" className="post-image" alt="ProfilePic" />
-        <div className="post-mid-text">{PostData[0].Name} kajdf adkj fsajdhf kajdfh kajhfakjdhf kdjfh k jdfhnas djfhnsdkjfhx </div>
+        <div className="post-mid-text">{PostData[0].Name} hee kah de</div>
       </div>
       
       <div className="post-lower">
-        <div className="post-lower-like"><BiSolidLike size={27}  />25</div>
-        <div className="post-lower-comment"><LiaCommentDotsSolid  size={27}  />25</div>
-        <div className="post-lower-dislike"><BiSolidDislike size={27}  />25</div>
+        <div className="post-lower-like"><BiSolidLike size={25}  />25</div>
+        <div className="post-lower-comment"><LiaCommentDotsSolid  size={25}  />25</div>
+        <div className="post-lower-dislike"><BiSolidDislike size={25}  />25</div>
       </div>
       <hr style={{margin:"auto", width:"80%", marginTop:"10px",   backgroundColor:"var(--color-text-secondary),borderTop: '1px solid #000'"}}/>
       <div className="post-addComment">
