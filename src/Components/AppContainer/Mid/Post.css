@@ -127,6 +127,34 @@
     margin-top: 25px;
     padding-bottom: 15px;
   }
+
+  .post-addComment
+  {
+    display: flex;
+    margin-top: 15px;
+    align-items: center;
+    gap: 10px;
+  
+  }
+  .post-addComment img{
+    height: 50px;
+    border-radius: 100%;
+    margin-left: 5%;
+  }
+  .post-addComment input
+  {
+    height: 50px;
+    padding-left: 5%;
+    background-color: var(--color-primary);
+    border-radius: 15px;
+    width: 68%;
+    border: none;
+    font-size: medium;
+  }
+  .comment-smile
+  {
+     margin-left: -10%;
+  }
   @media screen and (max-width: 768px)
   {
     .postCard-main
@@ -136,5 +164,9 @@
     .post-upper-right
     {
       width: 64%;
+    }
+    .comment-smile
+    {
+      margin-left: -13%;
     }
   }
