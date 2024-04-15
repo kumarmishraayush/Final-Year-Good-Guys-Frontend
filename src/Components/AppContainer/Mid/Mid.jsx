@@ -4,6 +4,7 @@ import Story from "./Story";
 import { FcCompactCamera } from "react-icons/fc";
 import { FcAddImage } from "react-icons/fc";
 import { FcVideoCall } from "react-icons/fc";
+import Post from "./Post";
  
  
 const Mid = () => {
@@ -40,6 +41,7 @@ const Mid = () => {
           </div>
         </div>
       </div>
+      <Post/>
     </>
   );
 };
