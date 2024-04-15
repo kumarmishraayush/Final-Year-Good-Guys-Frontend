@@ -84,10 +84,7 @@ const Post = () => {
       <div className="post-mid">
         <img src="Mera.jpg" className="post-image" alt="ProfilePic" />
         <div className="post-mid-text">Attitude is everything; it's the lens through which I see the world
-I may not be perfect, but my attitude is impeccable
-I'm not trying to be everyone's cup of tea. I'm my own double-shot espresso
-I'm not chasing anyone; I'm too busy chasing my dreams{PostData[0].Name}
-My attitude is the weapon that takes me places</div>
+I may not be perfect, but my attitude is </div>
       </div>
       
       <div className="post-lower">
