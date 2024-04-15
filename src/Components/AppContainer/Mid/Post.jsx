@@ -83,8 +83,7 @@ const Post = () => {
 
       <div className="post-mid">
         <img src="Mera.jpg" className="post-image" alt="ProfilePic" />
-        <div className="post-mid-text">Attitude is everything; it's the lens through which I see the world
-I may not be perfect, but my attitude is </div>
+        <div className="post-mid-text">{PostData[0].Name} kajdf adkj fsajdhf kajdfh kajhfakjdhf kdjfh k jdfhnas djfhnsdkjfhx </div>
       </div>
       
       <div className="post-lower">
