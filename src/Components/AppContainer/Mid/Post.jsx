@@ -91,9 +91,9 @@ My attitude is the weapon that takes me places</div>
       </div>
       
       <div className="post-lower">
-        <div className="post-lower-like"><BiSolidLike size={30}  />25</div>
-        <div className="post-lower-comment"><LiaCommentDotsSolid  size={30}  />25</div>
-        <div className="post-lower-dislike"><BiSolidDislike size={30}  />25</div>
+        <div className="post-lower-like"><BiSolidLike size={27}  />25</div>
+        <div className="post-lower-comment"><LiaCommentDotsSolid  size={27}  />25</div>
+        <div className="post-lower-dislike"><BiSolidDislike size={27}  />25</div>
       </div>
       <hr style={{margin:"auto", width:"80%", marginTop:"10px",   backgroundColor:"var(--color-text-secondary),borderTop: '1px solid #000'"}}/>
       <div className="post-addComment">
