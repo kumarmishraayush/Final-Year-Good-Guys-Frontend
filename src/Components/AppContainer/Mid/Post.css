@@ -28,7 +28,7 @@
   {
     width: 80%;
     margin: auto;
-    margin-top: 10%;
+    margin-top: 3%;
     background-color: var(--color-secondary);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -160,6 +160,7 @@
     .postCard-main
     {
       width:98% ;
+      margin-top: 2%;
     }
     .post-upper-right
     {
