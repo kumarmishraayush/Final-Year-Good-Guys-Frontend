@@ -85,6 +85,11 @@
   height: auto; /* Maintain aspect ratio */
   object-fit: cover;
   border-radius: 15px;
+  transform: scale(0.9); /* Initial scale */
+  transition: transform 0.3s; 
+}
+.post-mid img:hover {
+  transform: scale(1); /* Scale up on hover */
 }
 
 .post-mid-text {
@@ -111,6 +116,8 @@
   margin-top: 15px;
   align-items: center;
   gap: 10px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
 }
 .post-addComment img {
   height: 30px;
@@ -125,13 +132,15 @@
   width: 78%;
   border: none;
   font-size: medium;
+  color: var(--color-text-primary);
 }
 .comment-send {
  margin-left: -12%;
  color: white;
  background-color: gray;
  border-radius: 15px;
- box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Shadow effect */
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+ 
 width: 50px;
  display: flex;
  align-items: center;
@@ -147,6 +156,10 @@ width: 50px;
   backdrop-filter: blur(10px); /* Blur effect */
   padding: 20px; /* Add padding as needed */
   margin-top: 3%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+   
+
 }
 
 .post-upper-right2 ul li {
@@ -156,6 +169,10 @@ width: 50px;
   background-color: var(--color-primary);
   border-radius: 5px;
   padding: 7px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  /* Shadow effect */
+
 }
 @media screen and (max-width: 768px) {
   .postCard-main {

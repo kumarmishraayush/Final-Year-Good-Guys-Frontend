@@ -112,7 +112,7 @@ const Post = () => {
       </div>
 
       <div className="post-mid">
-        <div className="post-mid-text">{PostData[0].Name} hee kah de</div>
+        <div className="post-mid-text">{PostData[0].Name} hee kah adfhkjadhs kjasdfhj asdkhf de</div>
         <img src="Mera.jpg" className="post-image" alt="ProfilePic" />
       </div>
       
