@@ -156,6 +156,25 @@
   {
      margin-left: -10%;
   }
+
+  .post-upper-right2 ul{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.2); /* Background with transparency */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Shadow effect */
+  backdrop-filter: blur(10px); /* Blur effect */
+  padding: 20px; /* Add padding as needed */
+  margin-top: 3%;
+  }
+
+  .post-upper-right2 ul li{
+    list-style: none;
+    margin-top: 20px;
+    color: var(--color-text-primary);
+    background-color: var(--color-primary);
+    border-radius: 5px;
+    padding: 7px;
+  }
   @media screen and (max-width: 768px)
   {
     .postCard-main
@@ -171,4 +190,9 @@
     {
       margin-left: -13%;
     }
+    
+  .post-upper-right2 ul
+  {
+    margin-top: 10%;
+  }
   }

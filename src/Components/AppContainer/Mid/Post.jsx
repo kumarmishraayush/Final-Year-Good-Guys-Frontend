@@ -1,11 +1,14 @@
-import React  from "react";
+import React,{useState}  from "react";
 import "./Post.css";
 import { SlUserFollow } from "react-icons/sl";
 import { SlOptionsVertical } from "react-icons/sl";
 import { BiSolidLike } from "react-icons/bi";
 import { BiSolidDislike } from "react-icons/bi";
 import { LiaCommentDotsSolid } from "react-icons/lia";
-import { CiFaceSmile } from "react-icons/ci";
+ 
+import { RxCross2 } from "react-icons/rx";
+import { RiUserFollowLine } from "react-icons/ri";
+import { IoSend } from "react-icons/io5";
 
 
 const Post = () => {
@@ -61,6 +64,20 @@ const Post = () => {
       UserId: "@hakimlukka",
     },
   ];
+   
+  const [IsPostOption, setIsPostOption] = useState(false);
+
+  // Function to handle toggling
+  const handleToggle = () => {
+    setIsPostOption(!IsPostOption); // Toggle the state
+  };
+
+  
+    const [isUserAdded, setIsUserAdded] = useState(false);
+  
+    const handleFriend = () => {
+      setIsUserAdded(!isUserAdded);
+    };
 
   return (
     <div className="post-main">
@@ -75,15 +92,26 @@ const Post = () => {
           <div className="timeOnPost">10h ago</div>
         </div>
         <div className="post-upper-right2">
-        <SlOptionsVertical size={20} />
-        <SlUserFollow size={20} />
+          {IsPostOption ? (
+             <RxCross2 size={20} onClick={handleToggle} />
+          ):(<SlOptionsVertical size={20} onClick={handleToggle}  />)}
+         { IsPostOption &&(
+          <ul>
+            <li>Edit Post</li>
+            <li>Delete Post</li>
+          </ul>
+       ) }
+
+       {isUserAdded ? (
+          <RiUserFollowLine size={20}  onClick={handleFriend}  />
+       ):(<SlUserFollow size={20}  onClick={handleFriend} />)}
           </div>
 
       </div>
 
       <div className="post-mid">
-        <img src="Mera.jpg" className="post-image" alt="ProfilePic" />
         <div className="post-mid-text">{PostData[0].Name} hee kah de</div>
+        <img src="Mera.jpg" className="post-image" alt="ProfilePic" />
       </div>
       
       <div className="post-lower">
@@ -95,7 +123,7 @@ const Post = () => {
       <div className="post-addComment">
         <img src="ProfilePic.jpg" alt="ProfilePic" />
         <input type="text" placeholder="Add a comment" />
-        <CiFaceSmile size={25} className="comment-smile"/>
+        <IoSend  size={25} className="comment-smile"/>
         </div>
     
     </div>
