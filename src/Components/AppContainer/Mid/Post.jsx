@@ -1,4 +1,4 @@
-import React,{useState}  from "react";
+import React,{useState, useContext}  from "react";
 import "./Post.css";
 import { SlUserFollow } from "react-icons/sl";
 import { SlOptionsVertical } from "react-icons/sl";
@@ -9,9 +9,12 @@ import { LiaCommentDotsSolid } from "react-icons/lia";
 import { RxCross2 } from "react-icons/rx";
 import { RiUserFollowLine } from "react-icons/ri";
 import { IoSend } from "react-icons/io5";
+import { DarkModeContext } from "../../../Context/DarkModeContext";
 
 
 const Post = () => {
+
+  const { isDarkMode } = useContext(DarkModeContext);
   const PostData = [
     {
       storyOwner: "ProfilePic.jpg",
@@ -93,8 +96,8 @@ const Post = () => {
         </div>
         <div className="post-upper-right2">
           {IsPostOption ? (
-             <RxCross2 size={20} onClick={handleToggle} />
-          ):(<SlOptionsVertical size={20} onClick={handleToggle}  />)}
+             <RxCross2 size={20} color={isDarkMode ? "white" : "black"} onClick={handleToggle} />
+          ):(<SlOptionsVertical size={20} color={isDarkMode ? "white" : "black"} onClick={handleToggle}  />)}
          { IsPostOption &&(
           <ul>
             <li>Edit Post</li>
@@ -103,8 +106,8 @@ const Post = () => {
        ) }
 
        {isUserAdded ? (
-          <RiUserFollowLine size={20}  onClick={handleFriend}  />
-       ):(<SlUserFollow size={20}  onClick={handleFriend} />)}
+          <RiUserFollowLine size={20} color={isDarkMode ? "white" : "black"} onClick={handleFriend}  />
+       ):(<SlUserFollow size={20} color={isDarkMode ? "white" : "black"} onClick={handleFriend} />)}
           </div>
 
       </div>
@@ -114,16 +117,16 @@ const Post = () => {
         <img src="Mera.jpg" className="post-image" alt="ProfilePic" />
       </div>
       
-      <div className="post-lower">
-        <div className="post-lower-like"><BiSolidLike size={25}  />25</div>
-        <div className="post-lower-comment"><LiaCommentDotsSolid  size={25}  />25</div>
-        <div className="post-lower-dislike"><BiSolidDislike size={25}  />25</div>
+      <div className="post-lower" style={{color:"gray"}}>
+        <div className="post-lower-like"><BiSolidLike size={25} color={isDarkMode ? "white" : "black"} />25</div>
+        <div className="post-lower-comment"><LiaCommentDotsSolid color={isDarkMode ? "white" : "black"} size={25}  />25</div>
+        <div className="post-lower-dislike"><BiSolidDislike color={isDarkMode ? "white" : "black"} size={25}  />25</div>
       </div>
       <hr style={{margin:"auto", width:"80%", marginTop:"10px",   backgroundColor:"var(--color-text-secondary),borderTop: '1px solid #000'"}}/>
       <div className="post-addComment">
         <img src="ProfilePic.jpg" alt="ProfilePic" />
         <input type="text" placeholder="Add a comment" />
-        <IoSend  size={25} className="comment-smile"/>
+        <IoSend  size={25} color={isDarkMode ? "white" : "black"} className="comment-smile"/>
         </div>
     
     </div>

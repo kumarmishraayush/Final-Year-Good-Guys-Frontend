@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { FaHome } from "react-icons/fa";
 import { IoNotificationsCircleSharp } from "react-icons/io5";
@@ -7,7 +7,7 @@ import { MdDarkMode } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
 import { FaChevronDown } from "react-icons/fa";
 import { FaChevronUp } from "react-icons/fa";
-
+import { DarkModeContext } from "../../Context/DarkModeContext";
 import "./Navbar.css";
 const Navbar = () => {
   const [Home, setHome] = useState(false);
@@ -18,6 +18,8 @@ const Navbar = () => {
   const [theme, settheme] = useState("light-theme");
   const [iconDefault, seticonDefault] = useState("black");
   const [iconColor, seticonColor] = useState("gray");
+
+  const {toggleDarkMode} = useContext(DarkModeContext);
   const themeChange = () => {
     if (theme === "dark-theme") {
       settheme("light-theme");
@@ -124,7 +126,7 @@ const Navbar = () => {
                 <li onClick={hi}>View Profile Pic</li>
                 <li onClick={hi}>Logout</li>
                  
-                <li onClick={darkMode}>
+                <li  onClick={() => { darkMode(); toggleDarkMode(); }}>
                   {!isDark ? <MdDarkMode size={25} /> : <CiLight size={25} />}
                 </li>
                  
