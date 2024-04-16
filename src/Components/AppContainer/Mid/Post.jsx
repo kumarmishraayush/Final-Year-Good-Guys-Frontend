@@ -16,12 +16,22 @@ const Post = () => {
   const { isDarkMode } = useContext(DarkModeContext);
   const PostData = [
     {
-      storyOwner: "ProfilePic.jpg",
+      storyOwner: "chat.png",
       Name: "Bewakuf Lukka",
       UserId: "@hakimlukka",
     },
     {
-      storyOwner: "ProfilePic.jpg",
+      storyOwner: "Mera.jpg",
+      Name: "Hakim Lukka",
+      UserId: "@hakimlukka",
+    },
+    {
+      storyOwner: "evi-person.png",
+      Name: "Hakim Lukka",
+      UserId: "@hakimlukka",
+    },
+    {
+      storyOwner: "plus.png",
       Name: "Hakim Lukka",
       UserId: "@hakimlukka",
     },
@@ -31,7 +41,17 @@ const Post = () => {
       UserId: "@hakimlukka",
     },
     {
-      storyOwner: "ProfilePic.jpg",
+      storyOwner: "Mera.jpg",
+      Name: "Hakim Lukka",
+      UserId: "@hakimlukka",
+    },
+    {
+      storyOwner: "search Icon.png",
+      Name: "Hakim Lukka",
+      UserId: "@hakimlukka",
+    },
+    {
+      storyOwner: "Mera.jpg",
       Name: "Hakim Lukka",
       UserId: "@hakimlukka",
     },
@@ -41,27 +61,7 @@ const Post = () => {
       UserId: "@hakimlukka",
     },
     {
-      storyOwner: "ProfilePic.jpg",
-      Name: "Hakim Lukka",
-      UserId: "@hakimlukka",
-    },
-    {
-      storyOwner: "ProfilePic.jpg",
-      Name: "Hakim Lukka",
-      UserId: "@hakimlukka",
-    },
-    {
-      storyOwner: "ProfilePic.jpg",
-      Name: "Hakim Lukka",
-      UserId: "@hakimlukka",
-    },
-    {
-      storyOwner: "ProfilePic.jpg",
-      Name: "Hakim Lukka",
-      UserId: "@hakimlukka",
-    },
-    {
-      storyOwner: "ProfilePic.jpg",
+      storyOwner: "chat.png",
       Name: "Hakim Lukka",
       UserId: "@hakimlukka",
     },
