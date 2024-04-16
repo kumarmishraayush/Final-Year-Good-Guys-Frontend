@@ -157,6 +157,7 @@ width: 50px;
   padding: 20px; /* Add padding as needed */
   margin-top: 3%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1;
 
    
 

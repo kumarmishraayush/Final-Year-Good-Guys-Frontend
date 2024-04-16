@@ -7,9 +7,9 @@ import { BiSolidDislike } from "react-icons/bi";
 import { LiaCommentDotsSolid } from "react-icons/lia";
 import { RxCross2 } from "react-icons/rx";
 import { RiUserFollowLine } from "react-icons/ri";
- 
+import { FaHeart } from "react-icons/fa";
 import { DarkModeContext } from "../../../Context/DarkModeContext";
- 
+import { FaHeartBroken } from "react-icons/fa";
  
 const Post = () => {
 
@@ -66,7 +66,18 @@ const Post = () => {
       UserId: "@hakimlukka",
     },
   ];
-   
+  const [liked, setLiked] = useState(false);
+  const [disliked, setDisliked] = useState(false);
+
+  const handleLike = () => {
+    setLiked(!liked);
+    if (disliked) setDisliked(false); // Dislike should be toggled off if liking
+  };
+
+  const handleDislike = () => {
+    setDisliked(!disliked);
+    if (liked) setLiked(false); // Like should be toggled off if disliking
+  };
   const [IsPostOption, setIsPostOption] = useState(false);
 
   // Function to handle toggling
@@ -117,9 +128,9 @@ const Post = () => {
       </div>
       
       <div className="post-lower" style={{color:"gray"}}>
-        <div className="post-lower-like"><BiSolidLike size={25} color={isDarkMode ? "white" : "black"} />25</div>
+        <div className="post-lower-like">{!liked ? (<BiSolidLike size={25} onClick={handleLike} color={isDarkMode ? "white" : "black"} />):(<FaHeart size={25} onClick={handleLike} color="red" />)}25</div>
         <div className="post-lower-comment"><LiaCommentDotsSolid color={isDarkMode ? "white" : "black"} size={25}  />25</div>
-        <div className="post-lower-dislike"><BiSolidDislike color={isDarkMode ? "white" : "black"} size={25}  />25</div>
+        <div className="post-lower-dislike">{disliked ? (<FaHeartBroken size={25} onClick={handleDislike} color="red" />):(<BiSolidDislike onClick={handleDislike} color={isDarkMode ? "white" : "black"} size={25}  />)}25</div>
       </div>
       <hr style={{margin:"auto", width:"80%", marginTop:"10px",   backgroundColor:"var(--color-text-secondary),borderTop: '1px solid #000'"}}/>
       <div className="post-addComment">
