@@ -5,13 +5,12 @@ import { SlOptionsVertical } from "react-icons/sl";
 import { BiSolidLike } from "react-icons/bi";
 import { BiSolidDislike } from "react-icons/bi";
 import { LiaCommentDotsSolid } from "react-icons/lia";
- 
 import { RxCross2 } from "react-icons/rx";
 import { RiUserFollowLine } from "react-icons/ri";
-import { IoSend } from "react-icons/io5";
+ 
 import { DarkModeContext } from "../../../Context/DarkModeContext";
-
-
+ 
+ 
 const Post = () => {
 
   const { isDarkMode } = useContext(DarkModeContext);
@@ -126,7 +125,7 @@ const Post = () => {
       <div className="post-addComment">
         <img src="ProfilePic.jpg" alt="ProfilePic" />
         <input type="text" placeholder="Add a comment" />
-        <IoSend  size={25} color={isDarkMode ? "white" : "black"} className="comment-smile"/>
+        <div className="comment-send">Send</div>
         </div>
     
     </div>
