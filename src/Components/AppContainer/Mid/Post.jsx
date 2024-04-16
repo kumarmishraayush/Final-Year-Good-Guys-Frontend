@@ -17,7 +17,7 @@ const Post = () => {
   const PostData = [
     {
       storyOwner: "ProfilePic.jpg",
-      Name: "Hakim Lukka",
+      Name: "Bewakuf Lukka",
       UserId: "@hakimlukka",
     },
     {
@@ -93,6 +93,12 @@ const Post = () => {
     };
 
   return (
+    
+    <>
+    {
+      PostData.map((data) => (
+        
+     
     <div className="post-main">
     <div className="postCard-main">
       <div className="post-upper">
@@ -100,7 +106,7 @@ const Post = () => {
           <img src="ProfilePic.jpg " alt="ProfilePic" />
         </div>
         <div className="post-upper-right">
-          <div className="userNameOnPost">Hakim Lukka</div>
+          <div className="userNameOnPost">{data.Name}</div>
           <div className="UserIdOnPost">@hakumlukka</div>
           <div className="timeOnPost">10h ago</div>
         </div>
@@ -123,8 +129,8 @@ const Post = () => {
       </div>
 
       <div className="post-mid">
-        <div className="post-mid-text">{PostData[0].Name} hee kah adfhkjadhs kjasdfhj asdkhf de</div>
-        <img src="Mera.jpg" className="post-image" alt="ProfilePic" />
+        <div className="post-mid-text">{data.Name} hee kah adfhkjadhs kjasdfhj asdkhf de</div>
+        <img src={data.storyOwner} className="post-image" alt="ProfilePic" />
       </div>
       
       <div className="post-lower" style={{color:"gray"}}>
@@ -141,7 +147,11 @@ const Post = () => {
     
     </div>
     </div>
+     ))
+    }
+    </>
   );
+
 };
 
 export default Post;
