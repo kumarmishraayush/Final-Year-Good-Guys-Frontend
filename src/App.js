@@ -8,6 +8,7 @@ import Register from "./Components/Pages/RegisterPage/Register.jsx";
 import ProfilePage from "./Components/Pages/ProfilePage/ProfilePage.jsx";
 import Message from "./Components/Pages/MessagePage/Message.jsx";
 import Notification from "./Components/Pages/NotificationPage/Notification.jsx";
+import MessageBox from "./Components/Pages/MessagePage/MessageBox.jsx";
 
 const App = () => {
   return (
@@ -21,6 +22,8 @@ const App = () => {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/message" element={<Message/>} />
           <Route path="/notification" element={<Notification/>} />
+          <Route path="/messagebox" element={<MessageBox/>} />
+
         </Routes>
       </div>
     </BrowserRouter>

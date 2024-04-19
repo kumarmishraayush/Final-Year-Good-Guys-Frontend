@@ -1,0 +1,25 @@
+.message-main
+{
+    display: flex;
+}
+.message-left
+{
+  width: 30%;
+}
+.message-right
+{
+    width: 70%;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  .message-right{
+    display: none;
+   
+  } 
+  .message-left
+  {
+    width: 100%;
+  } 
+}

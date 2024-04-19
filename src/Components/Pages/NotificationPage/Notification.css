@@ -1,0 +1,68 @@
+.light-theme {
+    --color-primary: #f0f0f0;
+    --color-secondary: white;
+    --color-button-primary: black;
+    --color-button-seconday: #d2d3db;
+    --color-text-primary: black;
+    --color-text-secondary: #A9A9A9;
+    --color-button-text: black;
+    --border-color: white;
+  }
+  
+  .dark-theme{
+      --color-primary: #1e1e1e;
+      --color-secondary: #2c2c2c;
+      --color-tertiary: #2e2d2d;
+      --color-button-primary: #FFFB73;
+      --color-button-seconday: gray;
+      --color-text-primary: #eeeded;
+      --color-text-secondary: rgb(172, 170, 170);
+      --color-button-text: white;
+      --color-border: rgba(252, 250, 250, .1);
+  }
+.notification-main {
+    width: 65%;
+    margin: auto;
+    background-color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+     justify-content: space-between;
+    gap: 10px;
+    color: var(--color-text-primary);
+    border-radius: 10px;
+    margin-top: 5px;
+    
+}
+
+.notification-image
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 1%;
+    gap: 10px;
+    
+}
+.notification-image img {
+    height: 45px;
+    border-radius: 100%;
+    
+}
+
+.notification-time
+{
+    margin-right: 1%;
+    color: var(--color-text-secondary);
+}
+
+
+.notification-message
+{
+    width: 70%;
+}
+@media only screen and (max-width: 768px) {
+    .notification-main
+    {
+        width: 100%;
+    }
+}

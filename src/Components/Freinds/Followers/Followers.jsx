@@ -1,6 +1,7 @@
 import React from "react";
 import { IoIosSearch } from "react-icons/io";
 import "./Followers.css";
+ 
 
 const Followers = () => {
   const followerData = [
@@ -64,12 +65,15 @@ const Followers = () => {
         <IoIosSearch className="follower-search-icon" size={25} />
       </div>
       <div className="follower-list">
+
         {followerData.map((item, index) => (
           <div key={index}>
+            
             <div className="follower-detail">
               <img src={item.Image} alt="Shakal of follower" />
               <h5>{item.Name}</h5>
             </div>
+       
           </div>
         ))}
       </div>
