@@ -28,6 +28,8 @@ function Login() {
         <input type="password" name="password" placeholder='Enter Password' />
         </div>
         <button type="submit">Login</button>
+        <span>Don't have an account?</span>
+        <button >Signup</button>
         </div>
       </div>
    </motion.div>
