@@ -13,6 +13,7 @@ function Message() {
     style={{ width: "100%", height: "100%" }}>
       <Followers/>
       <Followings/>
+      <div className='message-main'></div>
     </motion.div>
    </>
   )
