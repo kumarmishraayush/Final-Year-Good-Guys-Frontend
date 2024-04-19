@@ -9,6 +9,7 @@ import { FaChevronDown } from "react-icons/fa";
 import { FaChevronUp } from "react-icons/fa";
 import { DarkModeContext } from "../../Context/DarkModeContext";
 import "./Navbar.css";
+import {  Link } from "react-router-dom";
 const Navbar = () => {
   const [Home, setHome] = useState(false);
   const [Notification, setNotification] = useState(false);
@@ -67,7 +68,10 @@ const Navbar = () => {
   };
 
   const hi = () => {
-    alert("Construction under progress");
+    setNotification(false);
+    setHome(false);
+    setMessage(false);
+    setIsDropdownOpen(false);
   };
   return (
     <>
@@ -81,24 +85,32 @@ const Navbar = () => {
           <IoIosSearch color={ isDark?("#A9A9A9"):("black")} size={23} id="search-icon" />
         </div>
         <div className="navbar-right">
+          <Link to="/home">
           <FaHome
             onClick={home}
             className={Home ? "active" : ""}
             size={25}
             color={Home ? iconColor : iconDefault}
-          />
+            />
+            </Link>
+
+            <Link to="/message">
           <BiSolidMessageEdit
             onClick={message}
             className={Message ? "active" : ""}
             size={25}
             color={Message ? iconColor : iconDefault}
-          />
+            />
+            </Link>
+
+          <Link to="/notification">
           <IoNotificationsCircleSharp
             onClick={notification}
             className={Notification ? "active" : ""}
             size={25}
             color={Notification ? iconColor : iconDefault}
-          />
+            />
+            </Link>
           <div className="arrows">
             <img
               src="ProfilePic.jpg"
@@ -123,9 +135,12 @@ const Navbar = () => {
             <div className="dropdown">
               {/* Dropdown content */}
               <ul>
-                <li onClick={hi}>View Profile Pic</li>
-                <li onClick={hi}>Logout</li>
-                 
+                <Link style={{ textDecoration: "none" }} to ="/profile">
+                <li  onClick={hi}>View Profile Pic</li>
+                </Link>
+                <Link style={{ textDecoration: "none" }} to="/">
+                <li  onClick={hi} >Logout</li>
+                </Link>
                 <li  onClick={() => { darkMode(); toggleDarkMode(); }}>
                   {!isDark ? <MdDarkMode size={25} /> : <CiLight size={25} />}
                 </li>

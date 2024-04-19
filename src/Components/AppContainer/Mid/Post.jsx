@@ -16,7 +16,7 @@ const Post = () => {
   const { isDarkMode } = useContext(DarkModeContext);
   const PostData = [
     {
-      storyOwner: "chat.png",
+      storyOwner: "evil-person.png",
       Name: "Bewakuf Lukka",
       UserId: "@hakimlukka",
     },
@@ -26,7 +26,7 @@ const Post = () => {
       UserId: "@hakimlukka",
     },
     {
-      storyOwner: "evi-person.png",
+      storyOwner: "Mera.jpg",
       Name: "Hakim Lukka",
       UserId: "@hakimlukka",
     },
