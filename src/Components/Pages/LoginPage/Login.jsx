@@ -29,7 +29,7 @@ function Login() {
         </div>
         <button type="submit">Login</button>
         <span>Don't have an account?</span>
-        <button >Signup</button>
+        <a href="/signup">Signup</a>
         </div>
       </div>
    </motion.div>
