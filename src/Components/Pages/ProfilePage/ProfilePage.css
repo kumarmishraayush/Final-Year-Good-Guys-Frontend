@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+.profile-container {
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+  
+.cover-pic {
+    width: 100%;
+    height: 400px;
+    background-image: url('E:\Final Year Project\good-guys\public\Good Guys.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px 10px 0 0;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    width: calc(100% - 40px);
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    margin-top: -50px;
+    margin-left: 2.5%;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background-image: url('E:\Final Year Project\good-guys\public\good-person.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.user-details {
+    margin-left: 20px;
+}
+
+.user-name {
+    margin-top: -10px;
+}
+
+.follows {
+    margin-top: -10px;
+    display: inline-flex;
+}
+
+#followers {
+    margin-right: 10px;
+}
+
+#following {
+    margin-left: 10px;
+}
+
+.buttons {
+    float: right;
+}
+
+.edit-profile-button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+}
+
+.story-button {
+    
+    margin-top: 10px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    border-color: #3498db;
+    background-color: #ffffff;
+    color: #3498db;
+    cursor: pointer;
+}
+
+.profile-stats {
+    display: flex;
+    flex-wrap: wrap; 
+    padding: 20px;
+}
+
+.left-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.right-section {
+    flex: 2;
+    margin-left: 20px;
+    min-width: 300px; 
+}
+
+.timeline {
+    overflow-y: auto; 
+    max-height: 400px; 
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.post-options {
+    margin-bottom: 10px;
+    border: 0.5px solid grey;
+    padding: 100px auto;
+    border-radius: 20px;
+}
+
+.post-options input[type="file"] {
+    margin-bottom: 10px;
+    width: calc(100% - 20px); 
+    padding: 8px;
+}
+
+.post-options textarea {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100% - 40px); 
+    border-radius: 10px;
+    padding: 8px;
+    resize: vertical;
+}
+
+.post-options button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+}
