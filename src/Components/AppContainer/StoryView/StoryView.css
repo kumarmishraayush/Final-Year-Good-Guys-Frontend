@@ -33,6 +33,7 @@
     backdrop-filter: blur(40px); /* Blur effect */
     padding: 20px; 
     font-family: 'Times New Roman', Times, serif;
+    z-index: 100;
   }
 .storyview-userInfo
 {
