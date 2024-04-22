@@ -56,7 +56,7 @@ function Notification() {
           initial={{ x: -1000 }} // Initial position outside the viewport
         animate={{ x: 0 }} // Move to x=0 (center of the viewport)
         transition={{ duration: 0.5 }} // Animation duration
-        style={{ width: "100%", height: "100%" }}
+         
            key={notification.id} className="notification-main">
             <div className="notification-image">
               <img src={notification.image} alt="notification" />

@@ -1,0 +1,111 @@
+.light-theme {
+    --color-primary: #f0f0f0;
+    --color-secondary: white;
+    --color-button-primary: black;
+    --color-button-seconday: #d2d3db;
+    --color-text-primary: black;
+    --color-text-secondary: #a9a9a9;
+    --color-button-text: black;
+    --border-color: none;
+    --ayush-color: blue;
+  }
+  
+  .dark-theme {
+    --color-primary: #1e1e1e;
+    --color-secondary: #2c2c2c;
+    --color-tertiary: #2e2d2d;
+    --color-button-primary: #fffb73;
+    --color-button-seconday: gray;
+    --color-text-primary: #eeeded;
+    --color-text-secondary: rgb(172, 170, 170);
+    --color-button-text: white;
+    --color-border: rgba(252, 250, 250, 0.1);
+    --ayush-color: #fffb73;
+  }
+
+  .storyview-main {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(40px); /* Blur effect */
+    padding: 20px; 
+  }
+.storyview-userInfo
+{
+    display: flex;
+    justify-content: center;
+    align-self:center;
+    color: var(--color-text-primary);
+    font-size: x-large;
+}
+.storyview-userInfo img
+{
+    border-radius: 10px;
+    height: 50px;
+    margin-top: 12px;
+   
+}
+.storyview-header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2%;
+    
+}
+.storyview-close
+{
+    color: var(--color-text-primary);
+    margin-right: 6%;
+}
+
+.storyview-body
+{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+   
+}
+.storyview-body img
+{
+    height: auto;
+    transform: scale(.8);
+    border-radius: 20px;
+    
+}
+
+.container {
+    width: 100%;
+    height: 2px; /* Adjust height as needed */
+    position: relative;
+    overflow: hidden; /* Hide overflow for the line */
+  }
+  
+  .line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: blue; /* Initial color */
+    animation: traverseLine 30s linear forwards; /* Animation for 30 seconds */
+  }
+  
+  @keyframes traverseLine {
+    0% {
+      transform: scaleX(0); /* Start with zero width */
+    }
+    100% {
+      transform: scaleX(1); /* End with full width */
+      background-color: red; /* Change color to blue */
+    }
+  }
+  
+
+  .storyview-userInfo p{
+   margin-left: 5%;
+  }
