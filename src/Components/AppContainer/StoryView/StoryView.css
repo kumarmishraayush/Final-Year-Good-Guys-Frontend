@@ -97,7 +97,7 @@
     width: 100%;
     height: 100%;
     background-color: blue; /* Initial color */
-    animation: traverseLine 30s linear forwards; /* Animation for 30 seconds */
+    animation: traverseLine 15s linear forwards; /* Animation for 30 seconds */
   }
   
   @keyframes traverseLine {

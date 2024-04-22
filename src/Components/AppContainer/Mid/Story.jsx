@@ -29,7 +29,7 @@ const Story = () => {
     if (!showStory) {
       setDelay(setTimeout(() => {
         setShowStory(false);
-      }, 30000));
+      }, 15000));
     }
   };
 
