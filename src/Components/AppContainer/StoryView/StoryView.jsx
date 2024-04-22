@@ -12,9 +12,9 @@ function StoryView({ toggleStory }) {
       <div className="storyview-header">
         <span className="storyview-userInfo">
           <img src="ProfilePic.jpg" alt="profile pic" className="storyview-profilePic" />
-          <p className="storyview-username">Username</p>
+          <p className="storyview-username">Hakim Luka</p>
         </span>
-        <RxCross1 size={40} className='storyview-close' onClick={toggleStory} />
+        <RxCross1 size={25} className='storyview-close' onClick={toggleStory} />
       </div>
       <div className="storyview-body">
         <img src="Mera.jpg" alt="story"   />

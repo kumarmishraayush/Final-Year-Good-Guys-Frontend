@@ -32,14 +32,15 @@
     left: 0;
     backdrop-filter: blur(40px); /* Blur effect */
     padding: 20px; 
+    font-family: 'Times New Roman', Times, serif;
   }
 .storyview-userInfo
 {
     display: flex;
-    justify-content: center;
+     
     align-self:center;
     color: var(--color-text-primary);
-    font-size: x-large;
+    font-size: large;
 }
 .storyview-userInfo img
 {
@@ -58,6 +59,7 @@
     padding-left: 15px;
     border-radius: 10px;
     margin-right: 35px;
+   
 }
 .storyview-close
 {
@@ -111,4 +113,5 @@
 
   .storyview-userInfo p{
    margin-left: 5%;
+   width: 20%;
   }
