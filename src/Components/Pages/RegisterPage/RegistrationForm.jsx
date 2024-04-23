@@ -83,7 +83,7 @@ const RegistrationForm = () => {
             onChange={handleChange}
             placeholder="Enter your full name"
           />
-          {errors.fullName && <span className="error">{errors.fullName}</span>}
+          {errors.fullName && <span style={{color:"red"}} className="error">{errors.fullName}</span>}
         </div>
 
         <div className="form-group">
@@ -124,7 +124,7 @@ const RegistrationForm = () => {
             onChange={handleChange}
             placeholder="Enter your email"
           />
-          {errors.email && <span className="error">{errors.email}</span>}
+          {errors.email && <span style={{color:"red"}} className="error">{errors.email}</span>}
         </div>
 
         <div className="form-group">
@@ -138,7 +138,7 @@ const RegistrationForm = () => {
             onChange={handleChange}
             placeholder="Enter your password"
           />
-          {errors.password && <span className="error">{errors.password}</span>}
+          {errors.password && <span style={{color:"red"}} className="error">{errors.password}</span>}
         </div>
 
         <div className="form-group">

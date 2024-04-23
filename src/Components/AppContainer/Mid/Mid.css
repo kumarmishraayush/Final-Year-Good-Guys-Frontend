@@ -44,7 +44,7 @@
   }
   .addPost-right
   {
-    width: 80%;
+    width: 98%;
      
   }
   .upper-right
@@ -53,6 +53,15 @@
     position: relative;
     flex-direction: row-reverse;
     align-items: center;
+  }
+  .selected-image img
+  {
+    height: 150px;
+    border-radius: 15px;
+  }
+  .selected-image
+  {
+    display: block;
   }
   .check
   {
