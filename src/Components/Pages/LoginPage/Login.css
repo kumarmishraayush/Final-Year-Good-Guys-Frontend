@@ -83,7 +83,7 @@
     padding-left: 15px; 
 }
 
-button{
+.login-submit{
     width: 150px;
     margin-top: 15px;
     height: 35px;
@@ -94,6 +94,7 @@ button{
     margin-bottom: 15px;
     font-size: larger;
     color: var(--color-button-text);
+    margin-left: 35%;
 }
 
 @media screen and (max-width: 768px) {
@@ -113,6 +114,10 @@ button{
     .login-password input
     {
         width: 250px;
+    }
+    .login-submit
+    {
+        margin-left: 20%;
     }
     
 }
