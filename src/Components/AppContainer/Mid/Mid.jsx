@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Mid.css";
 import Story from "./Story";
-import { FcCompactCamera, FcAddImage, FcVideoCall } from "react-icons/fc";
+import {  FcAddImage, FcVideoCall } from "react-icons/fc";
 import { RxCross1 } from "react-icons/rx";
 import Post from "./Post";
 
@@ -50,7 +50,7 @@ const Mid = () => {
         <div className="addPost-left">
           <img src="ProfilePic.jpg" alt="Profile" />
         </div>
-        <form onSubmit={handleSubmit}>
+        <form style={{width :"100%"}} onSubmit={handleSubmit}>
           <div className="addPost-right">
             <div className="upper-right">
               <input
@@ -74,16 +74,7 @@ const Mid = () => {
                   onChange={handleImageUpload}
                 />
               </label>
-              <div className="add-image">
-                <FcCompactCamera size={30} />
-                <h5>Camera</h5>
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleImageUpload}
-                  style={{ display: 'none' }}
-                />
-              </div>
+             
               <label htmlFor="videoUpload" className="add-video">
                 <FcVideoCall size={30} />
                 <h5>Video</h5>
