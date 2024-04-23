@@ -90,7 +90,8 @@
     padding-left: 5%;
     margin-left: 5%;
     border-radius: 10px;
-    color: var(--color-text-secondary);
+    color: var(--color-text-primary);
+    padding-right: 84px;
   }
   .lower-right
   {
@@ -147,6 +148,7 @@
     .upper-right input
     {
       width: 110%;
+      padding-right:55px ;
     }
     .addPost-left
     {

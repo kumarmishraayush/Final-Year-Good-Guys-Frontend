@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Mid.css";
 import Story from "./Story";
 import { FcCompactCamera, FcAddImage, FcVideoCall } from "react-icons/fc";
+import { RxCross1 } from "react-icons/rx";
 import Post from "./Post";
 
 const Mid = () => {
@@ -57,8 +58,9 @@ const Mid = () => {
                 placeholder="What's on your mind, hakim?"
                 value={postText}
                 onChange={handlePostTextChange}
+                
               />
-              <button type="submit" className="check">Send</button>
+              <button type="submit" style={{border: 'none'}} className="check">Send</button>
             </div>
             <div className="lower-right">
               <label htmlFor="imageUpload" className="add-image">
@@ -97,12 +99,15 @@ const Mid = () => {
           </div>
           {selectedImage && (
             <div className="selected-image" onClick={handleRemoveImage}>
+              <RxCross1 onClick={handleRemoveImage}size={25} />
+
               <img src={URL.createObjectURL(selectedImage)} alt="Selected" />
             </div>
           )}
           {selectedVideo && (
-            <div className="selected-video" onClick={handleRemoveVideo}>
-              <video style={{height:"200px", borderRadius:"15px"}} controls>
+            <div className="selected-video" style={{marginTop:"10px"}} >
+              <RxCross1 onClick={handleRemoveVideo} style={{cursor:"pointer"}} size={25} />
+              <video style={{height:"200px", borderRadius:"15px", maxWidth:"300px"}} controls>
                 <source  src={URL.createObjectURL(selectedVideo)} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
