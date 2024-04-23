@@ -35,6 +35,10 @@ const Mid = () => {
     setSelectedImage(null);
   };
 
+  const handleRemoveVideo = () => {
+    setSelectedVideo(null);
+  };
+
   return (
     <>
       <div className="mid-main">
@@ -91,11 +95,19 @@ const Mid = () => {
               </label>
             </div>
           </div>
-        {selectedImage && (
-          <div className="selected-image" onClick={handleRemoveImage}>
-            <img src={URL.createObjectURL(selectedImage)} alt="Selected" />
-          </div>
-        )}
+          {selectedImage && (
+            <div className="selected-image" onClick={handleRemoveImage}>
+              <img src={URL.createObjectURL(selectedImage)} alt="Selected" />
+            </div>
+          )}
+          {selectedVideo && (
+            <div className="selected-video" onClick={handleRemoveVideo}>
+              <video style={{height:"200px", borderRadius:"15px"}} controls>
+                <source  src={URL.createObjectURL(selectedVideo)} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          )}
         </form>
       </div>
       <Post />
