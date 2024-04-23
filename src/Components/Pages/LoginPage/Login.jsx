@@ -1,27 +1,47 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CiLock } from 'react-icons/ci';
+import { Link } from 'react-router-dom';
 import './Login.css';
 
 function Login() {
   const [formData, setFormData] = useState({ email: '', password: '' });
+  const [errors, setErrors] = useState({ email: '', password: '' });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
+    setErrors((prevErrors) => ({ ...prevErrors, [name]: '' })); // Clear error on change
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form data:', formData);
-    // You can add further logic like sending the data to an API here
+    // Basic validation
+    let valid = true;
+    const newErrors = { email: '', password: '' };
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+      valid = false;
+    }
+    if (!formData.password.trim()) {
+      newErrors.password = 'Password is required';
+      valid = false;
+    }
+
+    if (valid) {
+      console.log('Form data:', formData);
+      // Proceed with form submission or other actions
+    } else {
+      setErrors(newErrors);
+    }
   };
 
   return (
     <motion.div
-      initial={{ x: -1000 }} // Initial position outside the viewport
-      animate={{ x: 0 }} // Move to x=0 (center of the viewport)
-      transition={{ duration: 0.5 }} // Animation duration
+      initial={{ x: -1000 }}
+      animate={{ x: 0 }}
+      transition={{ duration: 0.5 }}
       className="login-main-container"
     >
       <div className="login-main">
@@ -41,6 +61,7 @@ function Login() {
                 value={formData.email}
                 onChange={handleChange}
               />
+              {errors.email && <span className="error">{errors.email}</span>}
             </div>
             Enter Your Password
             <div className="login-password">
@@ -51,17 +72,19 @@ function Login() {
                 value={formData.password}
                 onChange={handleChange}
               />
+              {errors.password && <span className="error">{errors.password}</span>}
             </div>
-            <motion.button className='login-submit'
+            <motion.button
+              className="login-submit"
               type="submit"
-              whileHover={{ scale: 1.1 }} // Scale animation on hover
-              whileTap={{ scale: 0.9 }} // Scale animation on tap/click
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
               Login
             </motion.button>
           </form>
           <span>Don't have an account?</span>
-          <a href="/signup">Signup</a>
+          <Link to="/register">SignUp</Link>
         </div>
       </div>
     </motion.div>
