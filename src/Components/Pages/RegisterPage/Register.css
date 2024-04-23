@@ -67,7 +67,31 @@ form
     color: var(--color-button-text);
     margin-left:37% ;
 }
+.register-image
+{
+    padding-top: 5px;
+}
 
+.registerImage {
+      /* Hide the default file input */
+      padding-top: 15px;
+  }
+  
+.login-link
+{
+    margin-left:35%;
+}
+  
+
+textarea
+{
+    width: 100%;
+    min-height: 50px;
+    border-radius: 15px;
+    background-color: var(--color-primary);
+    color: var(--color-text-primary);
+    padding: 8px;
+}
 
 
 @media screen and (max-width: 768px) {
@@ -78,5 +102,9 @@ form
     .register-submit
     {
         margin-left: 28%;
+    }
+    .login-link
+    {
+        margin-left: 23%;
     }
 }

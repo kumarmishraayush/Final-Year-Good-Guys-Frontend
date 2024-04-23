@@ -8,8 +8,8 @@ import { motion } from "framer-motion";
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     fullName: "",
-    avatar: "",
-    coverImage: "",
+    avatar: null,
+    coverImage: null,
     email: "",
     password: "",
     homeAddress: "",
@@ -19,8 +19,9 @@ const RegistrationForm = () => {
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    const { name, value, files } = e.target;
+    // For file inputs, use files[0] to get the first selected file
+    setFormData((prevData) => ({ ...prevData, [name]: name === 'avatar' || name === 'coverImage' ? files[0] : value }));
     // Clear the error message when the user starts typing again
     setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
   };
@@ -84,8 +85,34 @@ const RegistrationForm = () => {
           />
           {errors.fullName && <span className="error">{errors.fullName}</span>}
         </div>
+
+        <div className="form-group">
+          <label htmlFor="avatar">Avatar</label>
+          <br />
+          <input
+            type="file"
+            id="avatar"
+            name="avatar"
+            className="registerImage"
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="coverImage">Cover Image</label>
+          <br />
+          <input
+            type="file"
+            id="coverImage"
+            name="coverImage"
+            className="registerImage"
+            onChange={handleChange}
+          />
+        </div>
+
         {/* Add other form fields similar to Full Name */}
-        {/* Cover Image, Avatar, Email, Password, Home Address, Contact Number, About */}
+        {/* Email, Password, Home Address, Contact Number, About */}
+
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <br />
@@ -94,11 +121,12 @@ const RegistrationForm = () => {
             id="email"
             name="email"
             value={formData.email}
-            placeholder="Enter your email"
             onChange={handleChange}
+            placeholder="Enter your email"
           />
           {errors.email && <span className="error">{errors.email}</span>}
         </div>
+
         <div className="form-group">
           <label htmlFor="password">Password</label>
           <br />
@@ -107,11 +135,50 @@ const RegistrationForm = () => {
             id="password"
             name="password"
             value={formData.password}
-            placeholder="Enter your password"
             onChange={handleChange}
+            placeholder="Enter your password"
           />
           {errors.password && <span className="error">{errors.password}</span>}
         </div>
+
+        <div className="form-group">
+          <label htmlFor="homeAddress">Home Address</label>
+          <br />
+          <input
+            type="text"
+            id="homeAddress"
+            name="homeAddress"
+            value={formData.homeAddress}
+            onChange={handleChange}
+            placeholder="Enter your home address"
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="contactNumber">Contact Number</label>
+          <br />
+          <input
+            type="text"
+            id="contactNumber"
+            name="contactNumber"
+            value={formData.contactNumber}
+            onChange={handleChange}
+            placeholder="Enter your contact number"
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="about">About</label>
+          <br />
+          <textarea
+            id="about"
+            name="about"
+            value={formData.about}
+            onChange={handleChange}
+            placeholder="Write something about yourself"
+          ></textarea>
+        </div>
+
         <motion.button
           className="register-submit"
           type="submit"
@@ -121,7 +188,7 @@ const RegistrationForm = () => {
           Register
         </motion.button>
         <br />
-        <Link to="/">Already have an account?</Link>
+        <Link to="/" className="login-link">Already have an account?</Link>
       </form>
     </motion.div>
   );
