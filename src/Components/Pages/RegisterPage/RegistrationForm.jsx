@@ -1,20 +1,24 @@
 import React, { useState } from "react";
 import "./Register.css"; // Import your CSS file for styling
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 import { PiTrademarkRegistered } from "react-icons/pi";
 import { motion } from "framer-motion";
+ 
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     avatar: null,
     coverImage: null,
+    username: "",
     email: "",
     password: "",
     homeAddress: "",
     contactNumber: "",
     about: "",
+    followers: [],
+    followings: [],
   });
   const [errors, setErrors] = useState({});
 
@@ -35,7 +39,24 @@ const RegistrationForm = () => {
       return; // Stop form submission if there are errors
     }
     // Form is valid, you can proceed with submitting the data or other actions
-    console.log("Form data:", formData);
+    console.log('Form data:', formData);
+    axios.post('http://localhost:8000/api/v1/users/register', formData,{
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      }
+      
+    })
+    .then(response => {
+      console.log('Response:', response.data);  
+      alert("Welcome User is Registered Success You can Login Now");
+    })
+    .catch(error => {
+      if (error.response && error.response.status === 409) {
+        alert('Error: User with email or username already exists');
+      } else {
+        console.error('Error:', error);
+      }
+    });
   };
 
   const validateForm = (data) => {
@@ -43,6 +64,9 @@ const RegistrationForm = () => {
     // Basic validation for required fields and email format
     if (!data.fullName.trim()) {
       errors.fullName = "Full Name is required";
+    }
+    if (!data.username.trim()) {
+      errors.username = "Username is required";
     }
     if (!data.email.trim()) {
       errors.email = "Email is required";
@@ -87,6 +111,20 @@ const RegistrationForm = () => {
         </div>
 
         <div className="form-group">
+          <label htmlFor="username">Username</label>
+          <br />
+          <input
+            type="text"
+            id="username"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+            placeholder="Enter your username"
+          />
+          {errors.username && <span style={{color:"red"}} className="error">{errors.username}</span>}
+        </div>
+
+        <div className="form-group">
           <label htmlFor="avatar">Avatar</label>
           <br />
           <input
@@ -113,6 +151,7 @@ const RegistrationForm = () => {
         {/* Add other form fields similar to Full Name */}
         {/* Email, Password, Home Address, Contact Number, About */}
 
+        {/* Email field */}
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <br />
@@ -127,6 +166,7 @@ const RegistrationForm = () => {
           {errors.email && <span style={{color:"red"}} className="error">{errors.email}</span>}
         </div>
 
+        {/* Password field */}
         <div className="form-group">
           <label htmlFor="password">Password</label>
           <br />
@@ -141,6 +181,7 @@ const RegistrationForm = () => {
           {errors.password && <span style={{color:"red"}} className="error">{errors.password}</span>}
         </div>
 
+        {/* Home Address field */}
         <div className="form-group">
           <label htmlFor="homeAddress">Home Address</label>
           <br />
@@ -154,6 +195,7 @@ const RegistrationForm = () => {
           />
         </div>
 
+        {/* Contact Number field */}
         <div className="form-group">
           <label htmlFor="contactNumber">Contact Number</label>
           <br />
@@ -167,6 +209,7 @@ const RegistrationForm = () => {
           />
         </div>
 
+        {/* About field */}
         <div className="form-group">
           <label htmlFor="about">About</label>
           <br />
@@ -179,6 +222,7 @@ const RegistrationForm = () => {
           ></textarea>
         </div>
 
+        {/* Submit button */}
         <motion.button
           className="register-submit"
           type="submit"
@@ -188,6 +232,7 @@ const RegistrationForm = () => {
           Register
         </motion.button>
         <br />
+        {/* Link to login page */}
         <Link to="/" className="login-link">Already have an account?</Link>
       </form>
     </motion.div>
