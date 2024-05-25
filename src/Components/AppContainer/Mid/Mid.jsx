@@ -26,10 +26,13 @@ const Mid = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can implement your post submission logic here
-    console.log('Post Text:', postText);
-    console.log('Selected Image:', selectedImage);
-    console.log('Selected Video:', selectedVideo);
+   
+   const postObject = {
+      user : "hakim",
+      postImage : selectedImage,
+      description : postText,
+    }
+    console.log(postObject)
   };
 
   const handleRemoveImage = () => {

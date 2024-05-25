@@ -1,12 +1,24 @@
 import React, { createContext, useState } from 'react';
 const ApiFetchContext = createContext();
+import axios from 'axios';
 const ApiFetchProvider = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const toggleDarkMode = () => {
-    setIsDarkMode((prevMode) => !prevMode);
+  const [LoginUserInfo, setLoginUserInfo] = useState();
+  
+  const FetchAndLogin = () => {
+    axios
+      .get('https://api.github.com/users')
+      .then((response) => {
+        setLoginUserInfo(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
+
+  
+  
   return (
-    <ApiFetchContext.Provider value={{ isDarkMode, toggleDarkMode }}>
+    <ApiFetchContext.Provider value={{ LoginUserInfo, FetchAndLogin }}>
       {children}
     </ApiFetchContext.Provider>
   );
