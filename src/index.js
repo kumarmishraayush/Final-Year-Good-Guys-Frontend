@@ -4,15 +4,16 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { DarkModeProvider } from "./Context/DarkModeContext";
- 
+import { ApiFetchProvider } from "./Context/ApiFetch";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+      <ApiFetchProvider>
     <DarkModeProvider>
-      
       <App />
        
     </DarkModeProvider>
+      </ApiFetchProvider>
   </React.StrictMode>
 );
 

@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import { motion } from 'framer-motion';
 import { CiLock } from 'react-icons/ci';
 import { Link } from 'react-router-dom';
 import './Login.css';
-import axios from 'axios';
+ 
+import { ApiFetchContext } from '../../../Context/ApiFetch';
 
 function Login() {
+  const {FetchAndLogin} = React.useContext(ApiFetchContext);
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [errors, setErrors] = useState({ email: '', password: '' });
 
@@ -31,25 +33,13 @@ function Login() {
     }
 
     if (valid) {
-      console.log('Form data:', formData);
-      // Proceed with form submission or other actions
-      try {
-        const response = await axios.post('http://localhost:8000/api/v1/users/login', {
-          email: formData.email,
-          password: formData.password,
-        });
-        alert('Login successful:', response.data);
-        // Handle successful login, such as setting user state or redirecting to another page
-      } catch (error) {
-        if (error.response && error.response.status === 401) {
-          alert('Invalid credentials. Please check your email and password.');
-        } else {
-          alert('User not existed please try again');
-          
-        }
-      }
+      
+      await FetchAndLogin(formData);
+      
     } 
   };
+  
+
 
   return (
     <motion.div

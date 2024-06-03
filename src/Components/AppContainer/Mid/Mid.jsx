@@ -1,14 +1,49 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Mid.css";
 import Story from "./Story";
 import {  FcAddImage, FcVideoCall } from "react-icons/fc";
 import { RxCross1 } from "react-icons/rx";
 import Post from "./Post";
+import { ApiFetchContext } from "../../../Context/ApiFetch";
+import axios from "axios";
 
 const Mid = () => {
   const [postText, setPostText] = useState('');
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const {setUserPosts, LoginUserInfo } = React.useContext(ApiFetchContext);
+  const [AllPost,setAllPost] = useState([]);
+ 
+
+
+
+  const fetchAllPost = async () => {
+    try {
+      const response = await axios.get(
+        'http://localhost:8000/api/v1/posts/Get-AllPost' 
+      );
+
+      console.log('Response:', response.data);  
+      setAllPost(response.data.reverse()); // Reversing the array
+      const filteredPosts = response.data.filter(post => post.user._id === LoginUserInfo.user._id);
+      setUserPosts(filteredPosts);
+      
+    
+      
+    } catch (error) {
+      console.error('Error fetching user posts:', error);
+      alert('Error fetching user posts. Please check the console for details.');
+      console.log('Error response:', error.response.data); // Log error response
+    }
+  };
+
+ 
+
+  useEffect(() => {
+    fetchAllPost();
+  }, []);
+
+
 
   const handlePostTextChange = (e) => {
     setPostText(e.target.value);
@@ -24,15 +59,35 @@ const Mid = () => {
     setSelectedVideo(file);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
    
    const postObject = {
-      user : "hakim",
+      user : LoginUserInfo.user._id,
       postImage : selectedImage,
       description : postText,
     }
+
+    await axios.post('http://localhost:8000/api/v1/posts/create', postObject,{
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      }
+      
+    })
+    .then(response => {
+      console.log('Response:', response.data);  
+      alert("Post Created Successfully");
+    })
+    .catch(error => {
+      alert(error);
+    });
+
     console.log(postObject)
+    fetchAllPost();
+    handleRemoveImage();
+    handleRemoveVideo();
+    setPostText('');
+
   };
 
   const handleRemoveImage = () => {
@@ -51,7 +106,7 @@ const Mid = () => {
 
       <div className="mid-addPost">
         <div className="addPost-left">
-          <img src="ProfilePic.jpg" alt="Profile" />
+          <img src={LoginUserInfo.user.avatar} alt="Profile" />
         </div>
         <form style={{width :"100%"}} onSubmit={handleSubmit}>
           <div className="addPost-right">
@@ -109,7 +164,7 @@ const Mid = () => {
           )}
         </form>
       </div>
-      <Post />
+      <Post PostData={AllPost} />
     </>
   );
 };

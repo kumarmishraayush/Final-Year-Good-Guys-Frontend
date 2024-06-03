@@ -2,19 +2,21 @@ import React, { useEffect, useState } from "react";
 import "./Story.css";
 import { IoIosAddCircle } from "react-icons/io";
 import StoryView from "../StoryView/StoryView";
+import { ApiFetchContext } from "../../../Context/ApiFetch";
 
 const Story = () => {
+  const { LoginUserInfo } = React.useContext(ApiFetchContext);
   const data = [
+    { storyOwner: "ProfilePic.jpg", storyPost: "Ankit img.jpg" },
+    { storyOwner: "ProfilePic.jpg", storyPost: "Ankur Sharma.jpg" },
+    { storyOwner: "ProfilePic.jpg", storyPost: "Good Guys.png" },
+    { storyOwner: "ProfilePic.jpg", storyPost: "Good Guys.png" },
+    { storyOwner: "ProfilePic.jpg", storyPost: "ProfilePic.jpg" },
+    { storyOwner: "ProfilePic.jpg", storyPost: "Good Guys.png" },
+    { storyOwner: "ProfilePic.jpg", storyPost: "Ankur Sharma.jpg" },
+    { storyOwner: "ProfilePic.jpg", storyPost: "Good Guys.png" },
     { storyOwner: "ProfilePic.jpg", storyPost: "Mera.jpg" },
-    { storyOwner: "ProfilePic.jpg", storyPost: "Mera.jpg" },
-    { storyOwner: "ProfilePic.jpg", storyPost: "Mera.jpg" },
-    { storyOwner: "ProfilePic.jpg", storyPost: "Mera.jpg" },
-    { storyOwner: "ProfilePic.jpg", storyPost: "Mera.jpg" },
-    { storyOwner: "ProfilePic.jpg", storyPost: "Mera.jpg" },
-    { storyOwner: "ProfilePic.jpg", storyPost: "Mera.jpg" },
-    { storyOwner: "ProfilePic.jpg", storyPost: "Mera.jpg" },
-    { storyOwner: "ProfilePic.jpg", storyPost: "Mera.jpg" },
-    { storyOwner: "ProfilePic.jpg", storyPost: "Mera.jpg" },
+    { storyOwner: "ProfilePic.jpg", storyPost: "Ankit img.jpg" },
   ];
 
   const [showStory, setShowStory] = useState(false);
@@ -46,7 +48,7 @@ const Story = () => {
     <>
       <div className="story-main">
         <div className="story-owner">
-          <img src="ProfilePic.jpg" className="story-profilePic" alt="Add story" />
+          <img src={LoginUserInfo.user.avatar} className="story-profilePic" alt="Add story" />
           
           <IoIosAddCircle color="GRAY" size={25} className="add-story-logo" />
         </div>

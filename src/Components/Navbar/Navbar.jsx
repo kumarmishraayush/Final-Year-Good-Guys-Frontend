@@ -8,8 +8,10 @@ import { CiLight } from "react-icons/ci";
 import { FaChevronDown } from "react-icons/fa";
 import { FaChevronUp } from "react-icons/fa";
 import { DarkModeContext } from "../../Context/DarkModeContext";
+import axios from "axios";
 import "./Navbar.css";
 import {  Link } from "react-router-dom";
+import { ApiFetchContext } from "../../Context/ApiFetch";
 const Navbar = () => {
   const [Home, setHome] = useState(false);
   const [Notification, setNotification] = useState(false);
@@ -19,8 +21,10 @@ const Navbar = () => {
   const [theme, settheme] = useState("light-theme");
   const [iconDefault, seticonDefault] = useState("black");
   const [iconColor, seticonColor] = useState("gray");
-
+  
+  const {setAccessToken, setLoginUserInfo,LoginUserInfo, accessToken} = useContext(ApiFetchContext);
   const {toggleDarkMode} = useContext(DarkModeContext);
+
   const themeChange = () => {
     if (theme === "dark-theme") {
       settheme("light-theme");
@@ -67,17 +71,41 @@ const Navbar = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  const hi = () => {
+  const logout = async () => {
     setNotification(false);
+    setAccessToken(null);
+    setLoginUserInfo(null);
     setHome(false);
     setMessage(false);
     setIsDropdownOpen(false);
+
+
+    try {
+      const userData = {
+        user: {
+          _id: LoginUserInfo.user._id
+        }
+      };
+  
+      await axios.post('http://localhost:8000/api/v1/users/logout', userData, {
+        withCredentials: true  // Include cookies in the request
+      });
+      // Perform any additional actions after successful logout, such as clearing user data or redirecting to another page
+    } catch (error) {
+      console.error('Error logging out:', error);
+      // Handle errors, such as displaying an error message to the user
+    }
+  
   };
+
+  
   return (
     <>
       <div className="navbar-main">
         <div className="navbar-left">
-          <img src="Good Guys.png" alt="" />
+        <Link style={{ textDecoration: "none" }} to="/billboard">
+          <img src="Good Guys.png"  alt="" />
+          </Link>
           <h3 style={{ color:!isDark ? "black" : "#f0f0f0"}}>Good Guys</h3>
         </div>
         <div className="navbar-mid">
@@ -113,7 +141,7 @@ const Navbar = () => {
             </Link>
           <div className="arrows">
             <img
-              src="ProfilePic.jpg"
+              src={accessToken?(LoginUserInfo.user.avatar):("Good Guys.png")}
               alt="profile pic bhai"
               onClick={toggleDropdown}
             />
@@ -136,16 +164,16 @@ const Navbar = () => {
               {/* Dropdown content */}
               <ul>
                 <Link style={{ textDecoration: "none" }} to ="/profile">
-                <li  onClick={hi}>View Profile Pic</li>
+                <li  >View Profile Pic</li>
                 </Link>
-                <Link style={{ textDecoration: "none" }} to="/">
-                <li  onClick={hi} >Logout</li>
+                <Link style={{ textDecoration: "none" }} to="/register">
+                <li  onClick={logout} >Logout</li>
                 </Link>
                 <li  onClick={() => { darkMode(); toggleDarkMode(); }}>
                   {!isDark ? <MdDarkMode size={25} /> : <CiLight size={25} />}
                 </li>
                  
-                <li onClick={hi}>Setting</li>
+                <li>Setting</li>
               </ul>
             </div>
           )}

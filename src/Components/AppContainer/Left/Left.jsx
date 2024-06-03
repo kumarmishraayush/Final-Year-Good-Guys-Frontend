@@ -1,32 +1,33 @@
 import React from "react";
-
+import { ApiFetchContext } from "../../../Context/ApiFetch";
 import "./Left.css";
 const Left = () => {
+  const { LoginUserInfo } = React.useContext(ApiFetchContext);
   return (
     <>
       <div className="left-main">
         <div className="left-profile">
           <div className="left-pic">
             <div className="left-cover">
-              <img id="left-coverpic" src="Mera.jpg" alt="cover pic" />
+              <img id="left-coverpic" src={LoginUserInfo.user.coverImage} alt="cover pic" />
             </div>
             <div className="profile"></div>
-            <img id="left-profilepic" src="Mera.jpg" alt="" />
+            <img id="left-profilepic" src={LoginUserInfo.user.avatar} alt="" />
           </div>
 
           <div className="basic-info">
             <div className="basic-info1">
-              <h6>500</h6>
+              <h6>{LoginUserInfo.user.followers.length}</h6>
               <h5 className="countFollow">Followers</h5>
             </div>
 
             <div className="basic-info2">
-              <span>Hakim Lukka</span>
-              <h5 className="countFollow">@hakkimlukka</h5>
+              <span>{LoginUserInfo.user.fullName}</span>
+              <h5 className="countFollow">{LoginUserInfo.user.username}</h5>
             </div>
 
             <div className="basic-info3">
-              <h6>500</h6>
+              <h6>{LoginUserInfo.user.followings.length}</h6>
               <h5 className="countFollow">Followning</h5>
             </div>
           </div>

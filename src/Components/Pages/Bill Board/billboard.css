@@ -1,0 +1,25 @@
+.billboard-main
+{
+    color: var(--color-text-primary );
+}
+.billboard-body{
+    width: 300px;
+    margin: auto;
+    
+    background-color: var(--primary-color);
+}
+.billboard-body img
+{
+    width: 300px;
+    border-radius: 20px;
+}
+
+.billboard-member
+{   text-align: center;
+    margin-top: 52px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-secondary);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Shadow effect */
+}
